@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+  width: 100%;
+}
+
+.button1{
+  background-color: hotpink;
+  color: black;
+  border-color: grey;
+}
+
+.recipes{
+  background-color: yellow;
+  color: green;
+}
