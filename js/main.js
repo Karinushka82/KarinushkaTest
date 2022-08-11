@@ -8,8 +8,7 @@ function init() {
  * API documentations: https://swapi.dev/
  */
 function getPlanets () {
-    const response = axios.get('https://swapi.dev/api/');
-    console.log(`Res ${JSON.stringify(response)}`);
+    axios.get('https://swapi.dev/api/').then(() =>{console.log(`Res ${JSON.stringify(response)}`);})
 }
 
 function creatAPIError () {
