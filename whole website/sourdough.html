@@ -55,6 +55,22 @@
 
 </body>
 
+<script type="text/javascript">
+  (function() {
+      window._uxa = window._uxa || [];
+      if (typeof CS_CONF === 'undefined') {
+          window._uxa.push(['setPath', window.location.pathname + window.location.hash.replace('#', '?__')]);
+          var mt = document.createElement("script");
+          mt.type = "text/javascript";
+          mt.async = true;
+          mt.src = "https://t.contentsquare.net/uxa/0e28dcf1449bf.js";
+          document.getElementsByTagName("head")[0].appendChild(mt);
+      } else {
+          window._uxa.push(['trackPageview', window.location.pathname + window.location.hash.replace('#', '?__')]);
+      }
+  })();
+  </script>
+  
 </html>
 
 
