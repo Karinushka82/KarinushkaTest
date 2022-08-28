@@ -17,7 +17,13 @@ function creatAPIError () {
     console.error(`Res ${JSON.stringify(response)}`);
 }
 
-function reportCustomError(errorValue) {
-   _uxa.push(['trackError', 'The visitor selected wrong option in UI', {"custom att 1" : errorValue}]);
+function onLangSelect(selectedLang) {
+    if (selectedLang === 'French') {
+        reportCustomError ();
+    }
+}
+
+function reportCustomError() {
+   _uxa.push(['trackError', 'The visitor typed wrong language option in UI', {"Language" : 'French'}]);
 }
 init();
