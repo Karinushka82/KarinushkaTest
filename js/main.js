@@ -9,12 +9,14 @@ function init() {
  */
 function getPlanets () {
     axios.get('https://swapi.dev/api/').then(() =>{console.log(`Res ${JSON.stringify(response)}`);});
-    reportCustomError('Star Wars... Really!');
 }
 
 function creatAPIError () {
     const response = axios.get('https://swapi.dev/api/people/202/');
+    reportCustomError('Star Wars... Really!');
     console.error(`Res ${JSON.stringify(response)}`);
+    const errorMsg = document.getElementById('errorMsg');
+    errorMsg.style.visibility = 'visible';
 }
 
 function onLangSelect(selectedLang) {
@@ -24,6 +26,11 @@ function onLangSelect(selectedLang) {
 }
 
 function reportCustomError() {
-   _uxa.push(['trackError', 'The visitor typed wrong language option in UI', {"Language" : 'French'}]);
+    console.log('Send CE')
+   _uxa.push(['trackError', 'Oopps', {"severity" : 'urgent', "language": getAppLang()}]);
+}
+
+function getAppLang() {
+    return 'english'
 }
 init();
